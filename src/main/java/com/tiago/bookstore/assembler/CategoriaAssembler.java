@@ -57,8 +57,8 @@ public class CategoriaAssembler {
 		objDto.add(WebMvcLinkBuilder
 				.linkTo(WebMvcLinkBuilder.methodOn(CategoriaResource.class)
 				.findById(categoria.getId())).withSelfRel());
-	
-		//PAREI AQUI
+		
+		objDto.add(linkTo(methodOn(CategoriaResource.class).findAll()).withSelfRel());
 		
 	 
 		return objDto;

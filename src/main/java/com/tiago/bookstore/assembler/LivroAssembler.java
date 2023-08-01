@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 
 import com.tiago.bookstore.domain.Livro;
 import com.tiago.bookstore.dto.LivroDto;
-import com.tiago.bookstore.resource.CategoriaResource;
 import com.tiago.bookstore.resource.LivroResource;
 
 import lombok.AllArgsConstructor;
@@ -42,7 +41,7 @@ public class LivroAssembler {
 				.withSelfRel());
 
 		/* gera Link para o próprio recurso dessa coleção */
-		livroDto.add(linkTo(methodOn(CategoriaResource.class).findAll()).withSelfRel());
+		livroDto.add(linkTo(methodOn(LivroResource.class).findAll()).withSelfRel());
 
 		return livroDto;
 	}
